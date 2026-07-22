@@ -5,7 +5,7 @@ function addStudent() {
     if(name !== "") {
 
         let li = document.createElement("li");
-        li.innerText = username;
+        li.innerText = studentname;
 
         document.getElementById("studentList").appendChild(li);
 
