@@ -27,9 +27,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - name: Check Files exsist or not
+        run: |
+           test -f index.html
+
 
       - name: Scan Files for syntax errors
         run: |
           node -c *.js
+      
 
     
