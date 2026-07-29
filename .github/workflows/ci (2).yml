@@ -1,0 +1,35 @@
+name: JS Syntax Check
+
+#Trigger the workflow
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+#Define Jobs
+jobs:
+  check-js:
+
+    #runner
+    runs-on: ubuntu-latest
+
+    #Steps to execute
+    steps:
+    
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Scan Files for syntax errors
+        run: |
+          node -c *.js
+
+    
